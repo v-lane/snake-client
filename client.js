@@ -11,7 +11,46 @@ const connect = function() {
 
   conn.on("connect", () => {
     console.log("Successfully connected!");
-    conn.write("Name: VIC")
+    conn.write("Name: VIC");
+    conn.write("Move: up");
+
+    // testing setTimeout to move
+    // let x = 0;
+    // let timeout = 50;
+    // while (x < 30) {
+    //   setTimeout(() => {
+    //     conn.write("Move: up");
+    //   }, timeout);
+    //   timeout += 50;
+    //   setTimeout(() => {
+    //     conn.write("Move: right");
+    //   }, timeout);
+    //   timeout += 50;
+    //   setTimeout(() => {
+    //     conn.write("Move: right");
+    //   }, timeout);
+    //   timeout += 50;
+    //   setTimeout(() => {
+    //     conn.write("Move: up");
+    //   }, timeout);
+    //   timeout += 50;
+    //   setTimeout(() => {
+    //     conn.write("Move: left");
+    //   }, timeout);
+    //   timeout += 50;
+    //   setTimeout(() => {
+    //     conn.write("Move: left");
+    //   }, timeout);
+    //   timeout += 50;
+    //   x++;
+    // }
+
+    // testing setInterval to move
+    // setInterval(() => {
+    //   conn.write("Move: up");
+    // }, 50);
+
+
   });
 
   conn.on("data", ((data) => {
@@ -23,4 +62,4 @@ const connect = function() {
   return conn;
 };
 
-module.exports = {connect};
+module.exports = { connect };
