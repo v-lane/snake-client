@@ -10,12 +10,15 @@ const connect = function() {
   conn.setEncoding("utf8");
 
   conn.on("connect", () => {
-    console.log("Connected!");
+    console.log("Successfully connected!");
+    conn.write("Name: VIC")
   });
 
   conn.on("data", ((data) => {
     console.log(`Incoming Message: ${data}`);
   }));
+
+
 
   return conn;
 };
